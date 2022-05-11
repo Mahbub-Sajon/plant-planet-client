@@ -1,19 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [signInWithEmailAndPassword,
+        user,
+        loading,
+        error] = useSignInWithEmailAndPassword(auth);
+        const navigate = useNavigate();
 
+if (user){
+navigate('/')
+}
 
     const handleUserSignIn = event => {
-
+        event.preventDefault();
+        signInWithEmailAndPassword(email, password);
     }
 
     const handleEmailBlur = event => {
-
+        setEmail(event.target.value);
     }
 
     const handlePasswordBlur = event => {
-
+        setPassword(event.target.value);
     }
 
 
@@ -35,7 +48,7 @@ const Login = () => {
                     <label className='block text-xl' htmlFor="password">Password</label>
                     <input onBlur={handlePasswordBlur} className='w-3/4 h-12 border border-black mb-4 rounded-md' required type="password" name='password' />
                 </div>
-                {/* <p className='text-red-800'>{error?.message}</p> */}
+                <p className='text-red-800'>{error?.message}</p>
 
                 <input className='w-32 h-12 bg-green-400 rounded-md mb-4 font-bold hover:bg-green-600 cursor-pointer' type="submit" value="Login" />
 
@@ -44,8 +57,8 @@ const Login = () => {
 
 
             <p className='mb-4 text-xl'>
-              Don't have any account? <Link className='text-green-400 hover:text-green-600' to="/signup"> Create an account</Link>
-          </p>
+                Don't have any account? <Link className='text-green-400 hover:text-green-600' to="/signup"> Create an account</Link>
+            </p>
 
 
         </div>
