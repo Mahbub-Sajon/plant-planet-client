@@ -21,14 +21,14 @@ const SignUp = () => {
     }
 
     const handleEmailBlur = event => {
-        setEmail(event.target.name.value);
+        setEmail(event.target.value);
     }
 
     const handlePasswordBlur = event => {
-        setPassword(event.target.name.value);
+        setPassword(event.target.value);
     }
     const handleConfirmPassword = event => {
-        setConfirmPassword(event.target.name.value);
+        setConfirmPassword(event.target.value);
     }
 
 
