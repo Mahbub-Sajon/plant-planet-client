@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import CustomLink from '../CustomLink/CustomLink';
 import { MenuIcon, XIcon } from '@heroicons/react/solid'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Navbar = () => {
+    const [user] = useAuthState(auth);
     const [open, setOpen] = useState(false);
     return (
         <div className='bg-emerald-800 p-4'>
@@ -15,7 +18,15 @@ const Navbar = () => {
                 <div className='mr-16'> <CustomLink to="/dashboard">DASHBOARD</CustomLink></div>
                 <div className='mr-16'><CustomLink to="/blogs">BLOGS</CustomLink></div>
                 <div className='mr-16'> <CustomLink to="/about">ABOUT</CustomLink></div>
-                <div className='mr-16'> <CustomLink to="/login">LOGIN</CustomLink></div>
+                <div className='mr-16'> 
+                {
+                    user? 
+                    <button>SIGN OUT</button>
+                    :
+                    <CustomLink to="/login">LOGIN</CustomLink>
+                    }
+                    </div>
+                <div className='mr-16'> <CustomLink to="/allitem">ALL ITEMS</CustomLink></div>
                 <div className='mr-16'> <CustomLink to="/signup">SIGN UP</CustomLink></div>
             </nav>
         </div>
