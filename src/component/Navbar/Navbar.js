@@ -3,9 +3,13 @@ import CustomLink from '../CustomLink/CustomLink';
 import { MenuIcon, XIcon } from '@heroicons/react/solid'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
+    const handleSignOut = () =>{
+        signOut(auth);
+    }
     const [open, setOpen] = useState(false);
     return (
         <div className='bg-emerald-800 p-4'>
@@ -21,7 +25,7 @@ const Navbar = () => {
                 <div className='mr-16'> 
                 {
                     user? 
-                    <button>SIGN OUT</button>
+                    <button onClick={handleSignOut}>SIGN OUT</button>
                     :
                     <CustomLink to="/login">LOGIN</CustomLink>
                     }
