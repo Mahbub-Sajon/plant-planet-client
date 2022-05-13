@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import Loading from '../Loading/Loading';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const SignUp = () => {
     const [email, setEmail] = useState('');
@@ -9,7 +11,7 @@ const SignUp = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
 
-    const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+    const [createUserWithEmailAndPassword, user, loading] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
     
     const handleUserSignUp = event => {
         event.preventDefault();
@@ -19,6 +21,9 @@ const SignUp = () => {
         }
         if(password < 6){
             setError('Password must be longer than 6 characters!!!')
+        }
+        if(loading){
+            return <Loading></Loading>
         }
         createUserWithEmailAndPassword(email, password);
     }
@@ -73,6 +78,20 @@ const SignUp = () => {
             <p className='mb-4 text-xl'>
               Already have an account? <Link className='text-green-400 hover:text-green-600' to="/login"> Login </Link>
           </p>
+          <div className='flex justify-between'>
+              <p className='block w-1/3 h-0.5 ml-20 mt-2  bg-black'>
+                  <hr />
+              </p>
+              <p className='mr-5 ml-5 mb-4'>
+                  Or
+              </p>
+              <p className='block w-1/3 h-0.5 mr-20 mt-2 bg-black'>
+                  <hr />
+              </p>
+          </div>
+          <div>
+            <SocialLogin></SocialLogin>
+          </div>
         </div>
     );
 };
