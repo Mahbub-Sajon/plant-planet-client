@@ -4,6 +4,7 @@ import { MenuIcon, XIcon } from '@heroicons/react/solid'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
+import img from '../../images/nav.jpg'
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
@@ -16,7 +17,10 @@ const Navbar = () => {
             <div onClick={() => setOpen(!open)} className='w-6 h-6 md:hidden'>
                 {open ? <XIcon></XIcon> : <MenuIcon></MenuIcon>}
             </div>
-            <nav className={`md:flex justify-center bg-emerald-800 w-full duration-500 ease-in absolute md:static ${open ? 'top-6' : 'top-[-120px]'}`}>
+
+           <div  className='md:flex justify-center'>
+           <img className=' rounded-md w-16 h-16' src={img} alt="" />
+           <nav className={`md:flex justify-center bg-emerald-800 w-full duration-500 ease-in absolute md:static ${open ? 'top-6' : 'top-[-200px]'}`}>
                 <div className='mr-16'><CustomLink to="/">HOME</CustomLink></div>
                 <div className='mr-16'> <CustomLink to="/reviews">REVIEWS</CustomLink></div>
                 <div className='mr-16'> <CustomLink to="/dashboard">DASHBOARD</CustomLink></div>
@@ -33,6 +37,7 @@ const Navbar = () => {
                 <div className='mr-16'> <CustomLink to="/allitem">ALL ITEMS</CustomLink></div>
                 <div className='mr-16'> <CustomLink to="/signup">SIGN UP</CustomLink></div>
             </nav>
+           </div>
         </div>
     );
 };
