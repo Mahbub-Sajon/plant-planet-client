@@ -7,6 +7,7 @@ import Login from './component/Login/Login';
 import Navbar from './component/Navbar/Navbar';
 import RequireAuth from './component/RequireAuth/RequireAuth';
 import SignUp from './component/SignUp/SignUp';
+import UpdateProduct from './component/UpdateProduct/UpdateProduct';
 
 function App() {
   return (
@@ -21,6 +22,11 @@ function App() {
             <AllItem></AllItem>
           </RequireAuth>}>
         </Route>
+        <Route path='/update-product/:id' element={
+         
+            <UpdateProduct></UpdateProduct>
+          
+        }></Route>
       </Routes>
       <Footer></Footer>
     </div>
