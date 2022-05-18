@@ -11,7 +11,7 @@ const Products = (props) => {
         <div className='border-2 border-lime-800 rounded-lg p-2'>
             <img className='w-full h-80 rounded-lg' src={img} alt="" />
             <h1> <span className='font-bold text-lime-800'>Name:</span>  {name}</h1>
-            <h4> <span className='font-bold text-lime-800'>Service Cost:</span> BDT {price}</h4>
+            <h4> <span className='font-bold text-lime-800'>Price:</span> BDT {price}</h4>
             <p><span className='font-bold text-lime-800'>Description:</span> {description}</p>
             <p><span className='font-bold text-lime-800'>Supplier:</span> {supplier}</p>
             <p><span className='font-bold text-lime-800'>Quantity:</span> {quantity}</p>

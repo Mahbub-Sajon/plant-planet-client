@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import AddProduct from './component/AddProduct/AddProduct';
 import AllItem from './component/AllItem/AllItem';
 import Footer from './component/Footer/Footer';
 import Home from './component/Home/Home';
@@ -27,6 +28,7 @@ function App() {
             <UpdateProduct></UpdateProduct>
           
         }></Route>
+        <Route path='/add-product' element={<AddProduct></AddProduct>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
