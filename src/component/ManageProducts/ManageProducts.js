@@ -17,7 +17,7 @@ const ManageProducts = () => {
         const initiate = window.confirm('Are you sure you want to delete this product?');
         if (initiate) {
             console.log('deleting', id);
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://mighty-scrubland-45188.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

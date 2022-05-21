@@ -5,7 +5,7 @@ const UpdateProduct = () => {
     const {id} = useParams();
     const [products,setProducts] = useState({});
     useEffect(() =>{
-        const url = `http://localhost:5000/update-product/${id}`;
+        const url = `https://mighty-scrubland-45188.herokuapp.com/update-product/${id}`;
         fetch(url)
         .then(res => res.json())
         .then(data => setProducts(data))
@@ -19,7 +19,7 @@ const UpdateProduct = () => {
         else{
             const newQuantity = parseInt(products.quantity) - 1;
         const UpdateProduct = {newQuantity};
-        const url = `http://localhost:5000/update-product/${id}`;
+        const url = `https://mighty-scrubland-45188.herokuapp.com/update-product/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -41,7 +41,7 @@ const UpdateProduct = () => {
         const quantity = event.target.number.value;
         const newQuantity = parseInt(products.quantity) + parseInt(quantity);
         const UpdateProduct = {newQuantity};
-        const url = `http://localhost:5000/update-product/${id}`;
+        const url = `https://mighty-scrubland-45188.herokuapp.com/update-product/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
