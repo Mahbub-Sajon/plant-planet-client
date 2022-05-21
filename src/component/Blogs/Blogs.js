@@ -10,7 +10,7 @@ const Blogs = () => {
                 <p>Answer: The full form of SQL is structured query language and NoSQL means no structured query language. SQL is RDBMS which means they are relational and NoSQL is not RDBMS means non-relational. In SQL we need work with table but in NoSQL we can work with JSON data. SQL is for multi-row-transactions and NoSQL are JSON. </p>
             </p>
             <h2>Question: 3. What is the purpose of jwt and how does it work?</h2>
-            <p>Answer: </p>
+            <p>Answer: Full form of JWT is json web token. json is basically javascript object notation and token is some kind of data which is basically an identity. Jwt basically needed when a user try to login. Server wants to make sure that the client is authentic that is why server sends a token to the client side to verify the user. Client sends the exact token which is a copy actually to the server. Then the server checks if the client is authentic or not. And then server sends its response to client. This is how jwt works.</p>
         </div>
     );
 };
