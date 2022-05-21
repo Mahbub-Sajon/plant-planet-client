@@ -6,7 +6,7 @@ const AddProduct = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data)
-        const url = `http://localhost:5000/products`;
+        const url = `http://localhost:5000/my-products`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -18,20 +18,23 @@ const AddProduct = () => {
         .then(result => {
             console.log(result);
         })
-       
-
+        alert('product added successfully!!!');
+            data.target.reset();
     };
     return (
         <div>
-            <h2>Please Add a Product</h2>
+            <h2 className='text-lime-800 text-3xl font-bold pb-4'>Please Add a Product</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input className='w-3/4 h-12 border border-black mb-4 rounded-md' placeholder='Product Name' type='text' {...register("name")} />
+                
+            <input className='w-3/4 h-12 border border-black mb-4 rounded-md' placeholder='Email' type="email" {...register("email")} />
 
-                <input className='w-3/4 h-12 border border-black mb-4 rounded-md' placeholder='Price' type='number' {...register("price")} />
+                <input className='w-3/4 h-12 border border-black mb-4 rounded-md' placeholder='Product Name' type='text' required {...register("name")} />
 
-                <input className='w-3/4 h-12 border border-black mb-4 rounded-md' placeholder='Description' type="text" {...register("description")} />
+                <input className='w-3/4 h-12 border border-black mb-4 rounded-md' placeholder='Price' type='number' required {...register("price")} />
 
-                <input className='w-3/4 h-12 border border-black mb-4 rounded-md' placeholder='Supplier' type="text" {...register("supplier")} />
+                <input className='w-3/4 h-12 border border-black mb-4 rounded-md' placeholder='Description' type="text" required {...register("description")} />
+
+                <input className='w-3/4 h-12 border border-black mb-4 rounded-md' placeholder='Supplier' type="text" required {...register("supplier")} />
 
                 <input className='w-3/4 h-12 border border-black mb-4 rounded-md' placeholder='Quantity' type="number" {...register("quantity")} />
 

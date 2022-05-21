@@ -22,10 +22,17 @@ const Navbar = () => {
            <img className=' rounded-md w-16 h-16' src={img} alt="" />
            <nav className={`md:flex justify-center bg-emerald-800 w-full duration-500 ease-in absolute md:static ${open ? 'top-6' : 'top-[-200px]'}`}>
                 <div className='mr-16'><CustomLink to="/">HOME</CustomLink></div>
-                <div className='mr-16'> <CustomLink to="/reviews">REVIEWS</CustomLink></div>
-                <div className='mr-16'> <CustomLink to="/dashboard">DASHBOARD</CustomLink></div>
+
+                {
+                    user && <>
+                    <div className='mr-16'> <CustomLink to="/allitem">MANAGE INVENTORIES</CustomLink></div>
+                <div className='mr-16'> <CustomLink to="/add-product">ADD PRODUCT</CustomLink></div> 
+                <div className='mr-16'> <CustomLink to="/my-products">MY PRODUCTS</CustomLink></div> 
+                    </>
+                }
+                
                 <div className='mr-16'><CustomLink to="/blogs">BLOGS</CustomLink></div>
-                <div className='mr-16'> <CustomLink to="/about">ABOUT</CustomLink></div>
+               
                 <div className='mr-16'> 
                 {
                     user? 
@@ -34,8 +41,9 @@ const Navbar = () => {
                     <CustomLink to="/login">LOGIN</CustomLink>
                     }
                     </div>
-                <div className='mr-16'> <CustomLink to="/allitem">ALL ITEMS</CustomLink></div>
+               
                 <div className='mr-16'> <CustomLink to="/signup">SIGN UP</CustomLink></div>
+                <div className='mr-16'> <CustomLink to="/about">ABOUT</CustomLink></div>
             </nav>
            </div>
         </div>
