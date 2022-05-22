@@ -4,6 +4,7 @@ import useProducts from '../../hooks/useProducts'
 import Products from '../Products.js/Products';
 import Departments from '../Departments/Departments';
 import Partners from '../Partners/Partners';
+import MyProducts from '../MyProducts/MyProducts';
 
 const Home = () => {
     const [products, setProducts] = useProducts();
@@ -24,6 +25,8 @@ const Home = () => {
                     ></Products>)
                 }
             </div>
+            <h2 className='text-lime-800 text-3xl font-bold pb-4'>Added Products</h2>
+            <MyProducts></MyProducts>
             <div>
                 <Partners></Partners>
             </div>

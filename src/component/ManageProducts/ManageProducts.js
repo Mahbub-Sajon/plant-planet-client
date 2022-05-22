@@ -1,8 +1,6 @@
 import React from 'react';
 import useProducts from '../../hooks/useProducts'
 import { useNavigate } from 'react-router-dom';
-import MyProducts from '../MyProducts/MyProducts';
-
 
 const ManageProducts = () => {
     const [products, setProducts] = useProducts();
@@ -57,8 +55,7 @@ const ManageProducts = () => {
                 }
 
             </div>
-            <h2 className='text-lime-800 text-3xl font-bold pb-4'>Added Products</h2>
-            <MyProducts></MyProducts>
+           
         </div>
 
     );
