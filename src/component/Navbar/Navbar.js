@@ -31,7 +31,7 @@ const Navbar = () => {
                     </>
                 }
                 
-                <div className='mr-16'><CustomLink to="/blogs">BLOGS</CustomLink></div>
+                {/* <div className='mr-16'><CustomLink to="/blogs">BLOGS</CustomLink></div> */}
                
                 <div className='mr-16'> 
                 {

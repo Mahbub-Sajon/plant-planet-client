@@ -32,7 +32,7 @@ if(loading || sending){
     const handleUserSignIn = async event => {
         event.preventDefault();
         await signInWithEmailAndPassword(email, password);
-        const {data} = await axios.post('https://mighty-scrubland-45188.herokuapp.com/login', {email});
+        const {data} = await axios.post('https://plant-planet-server.vercel.app/login', {email});
         localStorage.setItem('accessToken', data.accessToken);
         navigate(from, {replace:true});
     }

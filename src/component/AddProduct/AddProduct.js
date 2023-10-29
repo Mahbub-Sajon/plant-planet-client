@@ -6,7 +6,7 @@ const AddProduct = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data)
-        const url = `https://mighty-scrubland-45188.herokuapp.com/my-products`;
+        const url = `https://plant-planet-server.vercel.app/my-products`;
         fetch(url, {
             method: 'POST',
             headers: {

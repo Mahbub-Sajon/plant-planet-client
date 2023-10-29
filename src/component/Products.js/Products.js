@@ -2,7 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import useProducts from '../../hooks/useProducts';
 
-const Products = (props) => {    const [products, setProducts] = useProducts();
+const Products = (props) => {    
+    const [products, setProducts] = useProducts();
 
     const { name, img, price, description, supplier, quantity, _id } = props.product;
     const navigate = useNavigate();

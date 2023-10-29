@@ -5,7 +5,7 @@ const UpdateMyProduct = () => {
     const {id} = useParams();
     const [myProducts,setMyProducts] = useState({});
     useEffect(() =>{
-        const url = `https://mighty-scrubland-45188.herokuapp.com/update-my-product/${id}`;
+        const url = `https://plant-planet-server.vercel.app/update-my-product/${id}`;
         fetch(url)
         .then(res => res.json())
         .then(data => setMyProducts(data))
@@ -19,7 +19,7 @@ const UpdateMyProduct = () => {
         else{
             const newQuantity = parseInt(myProducts.quantity) - 1;
         const UpdateMyProduct = {newQuantity};
-        const url = `https://mighty-scrubland-45188.herokuapp.com/update-my-product/${id}`;
+        const url = `https://plant-planet-server.vercel.app/update-my-product/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -41,7 +41,7 @@ const UpdateMyProduct = () => {
         const quantity = event.target.number.value;
         const newQuantity = parseInt(myProducts.quantity) + parseInt(quantity);
         const UpdateMyProduct = {newQuantity};
-        const url = `https://mighty-scrubland-45188.herokuapp.com/update-my-product/${id}`;
+        const url = `https://plant-planet-server.vercel.app/update-my-product/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

@@ -13,7 +13,7 @@ const MyProducts = () => {
         const getProducts = async () => {
             const email = user.email;
 
-            const url = `https://mighty-scrubland-45188.herokuapp.com/my-products?email=${email}`;
+            const url = `https://plant-planet-server.vercel.app/my-products?email=${email}`;
             const { data } = await axios.get(url, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -45,7 +45,7 @@ const MyProducts = () => {
         const initiate = window.confirm('Are you sure you want to delete this product?');
         if (initiate) {
             console.log('deleting', id);
-            const url = `https://mighty-scrubland-45188.herokuapp.com/my-products/${id}`;
+            const url = `https://plant-planet-server.vercel.app/my-products/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

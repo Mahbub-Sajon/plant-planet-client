@@ -4,7 +4,7 @@
 https://plant-planet-def76.web.app/
 
 ## Server site link:
-https://mighty-scrubland-45188.herokuapp.com/
+https://plant-planet-server.vercel.app/
 
 ## StackOverFlow Link:
 https://stackoverflow.com/questions/72316851/while-using-env-file-in-mongodb-then-it-shows-me-error
